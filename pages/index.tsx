@@ -1,9 +1,9 @@
 import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
-import { Button } from "components/Button/Button";
-import { LP_GRID_ITEMS } from "../data/lp-items";
 import Image from "next/image";
+import { Button } from "components/Button/Button";
 import Switcher from "components/Switcher/Switcher";
+import { LP_GRID_ITEMS } from "../data/lp-items";
 
 export default function Web() {
   return (
@@ -99,7 +99,9 @@ export default function Web() {
                 </p>
                 {singleItem.list && singleItem.list.length && (
                   <ul className="list-disc text-left text-gray-500 dark:text-gray-400">
-                    {singleItem.list?.map((listItem) => <li>{listItem}</li>)}
+                    {singleItem.list?.map((listItem) => (
+                      <li key={singleItem.title}>{listItem}</li>
+                    ))}
                   </ul>
                 )}
               </div>
