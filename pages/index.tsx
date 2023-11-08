@@ -1,42 +1,81 @@
-import { GetServerSidePropsContext } from "next"
-import Head from "next/head"
-import { Button } from "components/Button/Button"
-import { LP_GRID_ITEMS } from "../lp-items"
+import { GetServerSidePropsContext } from "next";
+import Head from "next/head";
+import { Button } from "components/Button/Button";
+import { LP_GRID_ITEMS } from "../data/lp-items";
+import Image from "next/image";
+import Switcher from "components/Switcher/Switcher";
 
 export default function Web() {
   return (
     <>
       <Head>
-        <meta property="og:url" content="https://next-enterprise.vercel.app/" />
+        <meta
+          property="og:url"
+          content="https://next-enterprise.vercel.app/"
+        />
         <meta
           property="og:image"
           content="https://raw.githubusercontent.com/Blazity/next-enterprise/main/project-logo.png"
         />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <title>Next.js Enterprise Boilerplate</title>
+        <meta
+          property="og:image:width"
+          content="1200"
+        />
+        <meta
+          property="og:image:height"
+          content="630"
+        />
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
+        <title>ParkSocial</title>
       </Head>
+      <Switcher />
       <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
-          <div className="mx-auto place-self-center">
+          <div className="mx-auto place-self-center pt-10">
             <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
-              Next.js Enterprise Boilerplate
+              <div className="flex justify-center">
+                <div style={{ color: "#30B5A6" }}>Park</div>
+                <div style={{ color: "#FF6B6B" }}>Social</div>
+              </div>
             </h1>
-            <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-              Jumpstart your enterprise project with our feature-packed, high-performance Next.js boilerplate!
-              Experience rapid UI development, AI-powered code reviews, and an extensive suite of tools for a smooth and
-              enjoyable development process.
+            <p className="mb-6 max-w-lg font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
+              Your Public Park Companion. Pop-Ups, Events, Feature-Rich Map,
+              Stewardship Rewards
             </p>
-            <Button href="https://github.com/Blazity/next-enterprise" className="mr-3">
-              Get started
-            </Button>
-            <Button
-              href="https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-enterprise"
-              intent="secondary"
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                paddingTop: 30,
+                paddingBottom: 30,
+              }}
             >
-              Deploy Now
-            </Button>
+              <Image
+                src="/app-images/app-mock-small.png"
+                height={300}
+                width={300}
+                alt="ParkSocial App Mock"
+              />
+            </div>
+            <div style={{ padding: 20 }}>
+              <Button
+                href="https://github.com/Blazity/next-enterprise"
+                className="mr-3"
+                style={{ backgroundColor: "#30b5a6" }}
+              >
+                Get the App
+              </Button>
+              <Button
+                href="#our_mission"
+                intent="secondary"
+              >
+                About Us
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -44,32 +83,49 @@ export default function Web() {
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
           <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
             {LP_GRID_ITEMS.map((singleItem) => (
-              <div key={singleItem.title} className="flex flex-col items-center justify-center text-center">
+              <div
+                key={singleItem.title}
+                id={singleItem.id || ""}
+                className="flex flex-col items-center justify-center text-center"
+              >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 p-1.5 text-blue-700 dark:bg-primary-900 lg:h-12 lg:w-12">
                   {singleItem.icon}
                 </div>
-                <h3 className="mb-2 text-xl font-bold dark:text-white">{singleItem.title}</h3>
-                <p className="text-gray-500 dark:text-gray-400">{singleItem.description}</p>
+                <h3 className="mb-2 text-xl font-bold dark:text-white">
+                  {singleItem.title}
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                  {singleItem.description}
+                </p>
+                {singleItem.list && singleItem.list.length && (
+                  <ul className="list-disc text-left text-gray-500 dark:text-gray-400">
+                    {singleItem.list?.map((listItem) => <li>{listItem}</li>)}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
     </>
-  )
+  );
 }
 
-export async function getServerSideProps({ req, res }: GetServerSidePropsContext) {
+export async function getServerSideProps({
+  req,
+  res,
+}: GetServerSidePropsContext) {
   if (req.headers?.host?.includes("next-enterprise.vercel.app")) {
     return {
       redirect: {
-        destination: "https://blazity.com/open-source/nextjs-enterprise-boilerplate",
+        destination:
+          "https://blazity.com/open-source/nextjs-enterprise-boilerplate",
         permanent: true,
       },
-    }
+    };
   }
 
   return {
     props: {},
-  }
+  };
 }
