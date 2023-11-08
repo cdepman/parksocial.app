@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export default function useDarkMode() {
+export default function useDarkMode(): [string, (theme: string) => void] {
   if (typeof window !== "undefined") {
     // Perform localStorage action
     const item = localStorage.getItem("key");
