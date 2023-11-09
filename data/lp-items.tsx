@@ -149,7 +149,7 @@ export const LP_GRID_ITEMS = [
   },
   {
     title: "The Benefits of Park Time",
-    description: "When you spend 2+ hours in the park, benefits include:",
+    description: "When you spend 2+ hours in the park per week, benefits include:",
     list: [
       "Lower blood pressure",
       "Lower stress hormone levels",
