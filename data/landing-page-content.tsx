@@ -37,7 +37,7 @@ export const LANDING_PAGE_CONTENT = [
   {
     title: "Ping Your Friends or the Public",
     description:
-      "You choose the visibility of your events (public by default) and can notify people about the event including its coordinates and details",
+      "You choose the visibility of your events (public by default) and can notify people about the event's coordinates and details",
     icon: (
       <svg
         width="800px"
@@ -57,10 +57,15 @@ export const LANDING_PAGE_CONTENT = [
     ),
   },
   {
-    title: "Our Mission",
+    title: "Our Mission and Principles",
     id: "our_mission",
     description:
-      "To bring people closer together through activities in nature, foster community and stewardship, and increase the health of park goers and the park itself",
+      "To bring people closer together through activities in nature, foster community and stewardship, and increase the health of park goers and the park itself. Our principles are:",
+    list: [
+      "Inclusivity",
+      "Participatory Community",
+      "Environmental Stewardship",
+    ],
     icon: (
       <svg
         fill="#000000"
@@ -90,32 +95,32 @@ export const LANDING_PAGE_CONTENT = [
     ),
   },
   {
-    title: "Our Principles",
-    description: "",
-    list: ["Inclusivity", "Participatory Community", "Public Stewardship"],
+    title: "The Benefits of Park Time",
+    description:
+      "When you spend 2+ hours in the park per week, benefits include:",
+    list: [
+      "Lower blood pressure",
+      "Lower stress hormone levels",
+      "Reduced nervous system arousal",
+      "Enhanced immune system function",
+      "Increased self-esteem ",
+      "Reduced feelings of isolation",
+      "Reduced anxiety",
+      "Improved mood",
+    ],
     icon: (
       <svg
         width="800px"
         height="800px"
-        viewBox="0 0 1024 1024"
-        version="1.1"
+        viewBox="0 0 24 24"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M832 960H192s-64-2.133333-64-170.666667h768c0 168.533333-64 170.666667-64 170.666667z"
-          fill="#42A5F5"
-        />
-        <path
-          d="M170.666667 64h682.666666v725.333333H170.666667z"
-          fill="#90CAF9"
-        />
-        <path
-          d="M384 320h341.333333v42.666667H384zM384 405.333333h341.333333v42.666667H384zM384 490.666667h341.333333v42.666666H384zM384 576h341.333333v42.666667H384zM384 661.333333h341.333333v42.666667H384z"
-          fill="#1976D2"
-        />
-        <path
-          d="M298.666667 320h42.666666v42.666667h-42.666666zM298.666667 405.333333h42.666666v42.666667h-42.666666zM298.666667 490.666667h42.666666v42.666666h-42.666666zM298.666667 576h42.666666v42.666667h-42.666666zM298.666667 661.333333h42.666666v42.666667h-42.666666z"
-          fill="#1976D2"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M8.96173 18.4687C6.01943 16.2137 2 12.4886 2 8.96653C2 3.08262 7.50016 0.885859 12 5.43111C16.4998 0.885859 22 3.08262 22 8.9665C22 12.4887 17.9806 16.2137 15.0383 18.4687C13.7063 19.4896 13.0403 20 12 20C10.9597 20 10.2937 19.4896 8.96173 18.4687ZM16.5 6.25C16.9142 6.25 17.25 6.58579 17.25 7V8.25002H18.5C18.9142 8.25002 19.25 8.5858 19.25 9.00002C19.25 9.41423 18.9142 9.75002 18.5 9.75002H17.25V11C17.25 11.4142 16.9142 11.75 16.5 11.75C16.0858 11.75 15.75 11.4142 15.75 11V9.75002L14.5 9.75002C14.0858 9.75002 13.75 9.41423 13.75 9.00002C13.75 8.5858 14.0858 8.25002 14.5 8.25002H15.75V7C15.75 6.58579 16.0858 6.25 16.5 6.25Z"
+          fill="red"
         />
       </svg>
     ),
@@ -152,7 +157,7 @@ export const LANDING_PAGE_CONTENT = [
     ),
   },
   {
-    title: "Get Rewarded for Stewardship",
+    title: "Get Rewarded",
     description: "Earn points for:",
     list: [
       "spending time in the park",
@@ -201,37 +206,6 @@ export const LANDING_PAGE_CONTENT = [
           fill="#FCFCFD"
           points="196.784,69.172 211.976,116.105 261.495,116.105 221.414,145.196 236.865,192.323 
 	196.784,163.232 156.703,192.323 172.154,145.196 132.073,116.105 181.592,116.105 "
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "The Benefits of Park Time",
-    description:
-      "When you spend 2+ hours in the park per week, benefits include:",
-    list: [
-      "Lower blood pressure",
-      "Lower stress hormone levels",
-      "Reduced nervous system arousal",
-      "Enhanced immune system function",
-      "Increased self-esteem ",
-      "Reduced feelings of isolation",
-      "Reduced anxiety",
-      "Improved mood",
-    ],
-    icon: (
-      <svg
-        width="800px"
-        height="800px"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M8.96173 18.4687C6.01943 16.2137 2 12.4886 2 8.96653C2 3.08262 7.50016 0.885859 12 5.43111C16.4998 0.885859 22 3.08262 22 8.9665C22 12.4887 17.9806 16.2137 15.0383 18.4687C13.7063 19.4896 13.0403 20 12 20C10.9597 20 10.2937 19.4896 8.96173 18.4687ZM16.5 6.25C16.9142 6.25 17.25 6.58579 17.25 7V8.25002H18.5C18.9142 8.25002 19.25 8.5858 19.25 9.00002C19.25 9.41423 18.9142 9.75002 18.5 9.75002H17.25V11C17.25 11.4142 16.9142 11.75 16.5 11.75C16.0858 11.75 15.75 11.4142 15.75 11V9.75002L14.5 9.75002C14.0858 9.75002 13.75 9.41423 13.75 9.00002C13.75 8.5858 14.0858 8.25002 14.5 8.25002H15.75V7C15.75 6.58579 16.0858 6.25 16.5 6.25Z"
-          fill="#1C274C"
         />
       </svg>
     ),

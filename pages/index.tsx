@@ -1,4 +1,3 @@
-import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { Button } from "components/Button/Button";
@@ -63,7 +62,7 @@ export default function Web() {
             </div>
             <div style={{ padding: 20 }}>
               <Button
-                href="https://github.com/Blazity/next-enterprise"
+                href=""
                 className="mr-3"
                 style={{ backgroundColor: "#30b5a6", border: "none" }}
               >
@@ -81,12 +80,12 @@ export default function Web() {
       </section>
       <section className="bg-gray-100 dark:bg-gray-900">
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
-          <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
+          <div className="justify-left space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
             {LANDING_PAGE_CONTENT.map((contentItem) => (
               <div
                 key={contentItem.title}
                 id={contentItem.id || ""}
-                className="flex flex-col items-center justify-center text-center"
+                className="flex flex-col items-left justify-left text-left"
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 p-1.5 text-blue-700 dark:bg-primary-900 lg:h-12 lg:w-12">
                   {contentItem.icon}
@@ -131,23 +130,4 @@ export default function Web() {
       </section>
     </>
   );
-}
-
-export async function getServerSideProps({
-  req,
-  res,
-}: GetServerSidePropsContext) {
-  if (req.headers?.host?.includes("next-enterprise.vercel.app")) {
-    return {
-      redirect: {
-        destination:
-          "https://blazity.com/open-source/nextjs-enterprise-boilerplate",
-        permanent: true,
-      },
-    };
-  }
-
-  return {
-    props: {},
-  };
 }
