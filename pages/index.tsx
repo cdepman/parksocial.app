@@ -87,13 +87,13 @@ export default function Web() {
                 id={contentItem.id || ""}
                 className="flex flex-col items-left justify-left text-left"
               >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 p-1.5 text-blue-700 dark:bg-primary-900 lg:h-12 lg:w-12">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full p-1.5 text-blue-700 dark:bg-primary-900 lg:h-12 lg:w-12">
                   {contentItem.icon}
                 </div>
                 <h3 className="mb-2 text-xl font-bold dark:text-white">
                   {contentItem.title}
                 </h3>
-                <p className="text-gray-500 dark:text-gray-400">
+                <p className="text-gray-500 dark:text-gray-400 mb-5">
                   {contentItem.description}
                 </p>
                 {contentItem.list && contentItem.list.length && (
@@ -128,6 +128,44 @@ export default function Web() {
           </div>
         </div>
       </section>
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          height: 700,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <p
+          style={{
+            zIndex: 1,
+            position: "relative",
+            width: "70%",
+            backgroundColor: "rgb(100 145 65 / 75%)",
+            marginBottom: 300,
+            padding: 30,
+            borderRadius: 10,
+            color: "white",
+          }}
+          className="font-light md:text-xl lg:mb-8 lg:text-xxl"
+        >
+          "We believe public parks are powerful places for human connection,
+          health, and joy. Especially in urban centers, public parks are an
+          opportunity for us to come together in a beautiful public space
+          regardless of class, age, orientation, or beliefs. Countless studies
+          have shown the tangible health benefits of spending time in natural
+          and social settings."
+        </p>
+        <Image
+          src="/hero-images/hero-park.jpeg"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          alt="ParkSocial App Mock"
+        />
+      </div>
     </>
   );
 }
