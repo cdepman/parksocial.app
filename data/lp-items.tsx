@@ -45,7 +45,7 @@ export const LP_GRID_ITEMS = [
     title: "Our Mission",
     id: "our_mission",
     description:
-      "To bring people closer together through activities in nature, foster community and stewardship, and increawse the health of park goers and the park itself",
+      "To bring people closer together through activities in nature, foster community and stewardship, and increase the health of park goers and the park itself",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
