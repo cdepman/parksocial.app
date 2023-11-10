@@ -10,11 +10,11 @@ export default function Web() {
       <Head>
         <meta
           property="og:url"
-          content="https://next-enterprise.vercel.app/"
+          content="https://parksocial.app/"
         />
         <meta
           property="og:image"
-          content="https://raw.githubusercontent.com/Blazity/next-enterprise/main/project-logo.png"
+          content="/hero-images/hero-park.jpeg"
         />
         <meta
           property="og:image:width"
