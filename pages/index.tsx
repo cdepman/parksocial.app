@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Button } from "components/Button/Button";
 import Switcher from "components/Switcher/Switcher";
-import { LP_GRID_ITEMS } from "../data/lp-items";
+import { LANDING_PAGE_CONTENT } from "../data/landing-page-content";
 
 export default function Web() {
   return (
@@ -82,26 +82,26 @@ export default function Web() {
       <section className="bg-gray-100 dark:bg-gray-900">
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
           <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
-            {LP_GRID_ITEMS.map((singleItem) => (
+            {LANDING_PAGE_CONTENT.map((contentItem) => (
               <div
-                key={singleItem.title}
-                id={singleItem.id || ""}
+                key={contentItem.title}
+                id={contentItem.id || ""}
                 className="flex flex-col items-center justify-center text-center"
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 p-1.5 text-blue-700 dark:bg-primary-900 lg:h-12 lg:w-12">
-                  {singleItem.icon}
+                  {contentItem.icon}
                 </div>
                 <h3 className="mb-2 text-xl font-bold dark:text-white">
-                  {singleItem.title}
+                  {contentItem.title}
                 </h3>
                 <p className="text-gray-500 dark:text-gray-400">
-                  {singleItem.description}
+                  {contentItem.description}
                 </p>
-                {singleItem.list && singleItem.list.length && (
+                {contentItem.list && contentItem.list.length && (
                   <ul className="list-disc text-left text-gray-500 dark:text-gray-400">
-                    {singleItem.list?.map((listItem) => (
+                    {contentItem.list?.map((listItem) => (
                       <li
-                        key={singleItem.title}
+                        key={contentItem.title}
                         className="flex items-center space-x-3"
                       >
                         <svg
