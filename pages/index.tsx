@@ -151,12 +151,12 @@ export default function Web() {
           }}
           className="font-light md:text-xl lg:mb-8 lg:text-xxl"
         >
-          "We believe public parks are powerful places for human connection,
+          We believe public parks are powerful places for human connection,
           health, and joy. Especially in urban centers, public parks are an
           opportunity for us to come together in a beautiful public space
           regardless of class, age, orientation, or beliefs. Countless studies
           have shown the tangible health benefits of spending time in natural
-          and social settings."
+          and social settings.
         </p>
         <Image
           src="/hero-images/hero-park.jpeg"
