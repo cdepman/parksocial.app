@@ -85,7 +85,7 @@ export default function Web() {
                 className="mr-3"
                 style={{ backgroundColor: "#30b5a6", border: "none" }}
               >
-                Sign Up
+                Get the App
               </Button>
               <Button
                 href="#our_mission"
@@ -186,7 +186,7 @@ export default function Web() {
       </div>
       <div
         id="sign_up_form"
-        className="bg-gray-100 dark:bg-gray-900 flex justify-center align-middle py-20"
+        className="bg-gray-100 dark:bg-gray-900 flex justify-center align-middle py-20 px-10"
       >
         <SubscribeForm />
       </div>
