@@ -30,7 +30,7 @@ const EmailForm = ({ onSubmit }: Props) => {
       }}
     >
       <div className="text-2xl mb-5 dark:text-white">
-        We're still building the app - sign up to get updates and beta access.
+        We are still building the app - sign up to get updates and beta access.
       </div>
       <div>
         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
