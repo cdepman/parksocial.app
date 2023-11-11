@@ -7,6 +7,8 @@ export const LANDING_PAGE_CONTENT = [
       <svg
         version="1.1"
         id="Layer_1"
+        width="800px"
+        height="800px"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 512 512"
@@ -143,7 +145,7 @@ export const LANDING_PAGE_CONTENT = [
     title: "Our Mission and Principles",
     id: "our_mission",
     description:
-      "Our mission is to bring people closer together through activities in nature, foster community and stewardship, and increase the health of park goers and the park itself. Our principles are:",
+      "Our mission is to bring New Yorkers closer together through activities in nature, foster community and stewardship, and increase the health of park goers and the park itself. Our principles are:",
     list: [
       "Inclusivity",
       "Participatory Community",

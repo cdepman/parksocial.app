@@ -31,7 +31,7 @@ export default function Web() {
         <title>ParkSocial</title>
       </Head>
       <Switcher />
-      <section className="bg-gray-100 dark:bg-gray-900">
+      <div className="bg-gray-100 dark:bg-gray-900 pb-6">
         <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
           <div className="mx-auto place-self-center pt-10">
             <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
@@ -41,7 +41,7 @@ export default function Web() {
               </div>
             </h1>
             <p className="mb-6 max-w-lg font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-              Your Public Park Companion. Pop-Ups, Events, Feature-Rich Map,
+              Your NYC Public Park Companion. Pop-Ups, Events, Feature-Rich Map,
               Stewardship Rewards
             </p>
             <div
@@ -77,57 +77,57 @@ export default function Web() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="bg-gray-100 dark:bg-gray-900">
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
-          <div className="justify-left space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
-            {LANDING_PAGE_CONTENT.map((contentItem) => (
-              <div
-                key={contentItem.title}
-                id={contentItem.id || ""}
-                className="flex flex-col items-left justify-left text-left"
-              >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full p-1.5 text-blue-700 dark:bg-primary-900 lg:h-12 lg:w-12">
-                  {contentItem.icon}
-                </div>
-                <h3 className="mb-2 text-xl font-bold dark:text-white">
-                  {contentItem.title}
-                </h3>
-                <p className="text-gray-500 dark:text-gray-400 mb-5">
-                  {contentItem.description}
-                </p>
-                {contentItem.list && contentItem.list.length && (
-                  <ul className="list-disc text-left text-gray-500 dark:text-gray-400">
-                    {contentItem.list?.map((listItem) => (
-                      <li
-                        key={contentItem.title}
-                        className="flex items-center space-x-3"
-                      >
-                        <svg
-                          className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 16 12"
+        <div>
+          <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
+            <div className="justify-left space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
+              {LANDING_PAGE_CONTENT.map((contentItem) => (
+                <div
+                  key={contentItem.title}
+                  id={contentItem.id || ""}
+                  className="flex flex-col items-left justify-left text-left"
+                >
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full p-1.5 text-blue-700 dark:bg-primary-900 lg:h-12 lg:w-12">
+                    {contentItem.icon}
+                  </div>
+                  <h3 className="mb-2 text-xl font-bold dark:text-white">
+                    {contentItem.title}
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400 mb-5">
+                    {contentItem.description}
+                  </p>
+                  {contentItem.list && contentItem.list.length && (
+                    <ul className="list-disc text-left text-gray-500 dark:text-gray-400">
+                      {contentItem.list?.map((listItem) => (
+                        <li
+                          key={contentItem.title}
+                          className="flex items-center space-x-3"
                         >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M1 5.917 5.724 10.5 15 1.5"
-                          />
-                        </svg>
-                        <span>{listItem}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
+                          <svg
+                            className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 16 12"
+                          >
+                            <path
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M1 5.917 5.724 10.5 15 1.5"
+                            />
+                          </svg>
+                          <span>{listItem}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </section>
+      </div>
       <div
         style={{
           position: "relative",
@@ -160,9 +160,7 @@ export default function Web() {
         </p>
         <Image
           src="/hero-images/hero-park.jpeg"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
+          fill
           alt="ParkSocial App Mock"
         />
       </div>
