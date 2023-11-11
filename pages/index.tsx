@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "components/Button/Button";
 import Switcher from "components/Switcher/Switcher";
 import { LANDING_PAGE_CONTENT } from "../data/landing-page-content";
+import { SubscribeForm } from "components/SubscribeForm/SubscribeForm";
 
 export default function Web() {
   return (
@@ -163,6 +164,9 @@ export default function Web() {
           fill
           alt="ParkSocial App Mock"
         />
+      </div>
+      <div>
+        <SubscribeForm />
       </div>
     </>
   );
