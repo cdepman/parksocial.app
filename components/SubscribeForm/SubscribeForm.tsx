@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 const url =
-  "https://depman.us21.list-manage.com/subscribe/post?u=5f0b266610ace2a600669dada&amp;id=8d323b6170&amp;f_id=0038e9e6f0";
+  "https://depman.us21.list-manage.com/subscribe/post?u=5f0b266610ace2a600669dada&id=8d323b6170";
 
 const validateEmail = (email: string) => {
   return String(email)
@@ -23,8 +23,15 @@ const EmailForm = ({ onSubmit }: Props) => {
   const [email, setEmail] = useState("");
 
   return (
-    <form onSubmit={() => onSubmit({ EMAIL: email })}>
-      <h3>Join our email list for future updates.</h3>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmit({ EMAIL: email });
+      }}
+    >
+      <div className="text-2xl mb-5 dark:text-white">
+        Join our email list for future updates.
+      </div>
       <div>
         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
           Your Email
@@ -52,7 +59,7 @@ const EmailForm = ({ onSubmit }: Props) => {
           />
         </div>
         <button
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="text-white bg-blue-700 disabled:opacity-25 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 hover:cursor-pointer"
           type="submit"
           disabled={!validateEmail(email)}
         >

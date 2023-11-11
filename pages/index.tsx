@@ -4,8 +4,26 @@ import { Button } from "components/Button/Button";
 import Switcher from "components/Switcher/Switcher";
 import { LANDING_PAGE_CONTENT } from "../data/landing-page-content";
 import { SubscribeForm } from "components/SubscribeForm/SubscribeForm";
+import { useEffect } from "react";
 
 export default function Web() {
+  // add smooth scroll
+  useEffect(() => {
+    document &&
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const href = anchor?.getAttribute("href");
+          if (href) {
+            document.querySelector(href)?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+  }, []);
+
   return (
     <>
       <Head>
@@ -63,11 +81,11 @@ export default function Web() {
             </div>
             <div style={{ padding: 20 }}>
               <Button
-                href=""
+                href="#sign_up_form"
                 className="mr-3"
                 style={{ backgroundColor: "#30b5a6", border: "none" }}
               >
-                Get the App
+                Sign Up
               </Button>
               <Button
                 href="#our_mission"
@@ -112,9 +130,9 @@ export default function Web() {
                           >
                             <path
                               stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
                               d="M1 5.917 5.724 10.5 15 1.5"
                             />
                           </svg>
@@ -150,7 +168,7 @@ export default function Web() {
             borderRadius: 10,
             color: "white",
           }}
-          className="font-light md:text-xl lg:mb-8 lg:text-xxl"
+          className="md:text-xl lg:mb-8 lg:text-xxl font-medium"
         >
           We believe public parks are powerful places for human connection,
           health, and joy. Especially in urban centers, public parks are an
@@ -163,9 +181,13 @@ export default function Web() {
           src="/hero-images/hero-park.jpeg"
           fill
           alt="ParkSocial App Mock"
+          style={{ objectFit: "cover" }}
         />
       </div>
-      <div>
+      <div
+        id="sign_up_form"
+        className="bg-gray-100 dark:bg-gray-900 flex justify-center align-middle py-20"
+      >
         <SubscribeForm />
       </div>
     </>
