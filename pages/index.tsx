@@ -1,10 +1,10 @@
+import { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Button } from "components/Button/Button";
+import { SubscribeForm } from "components/SubscribeForm/SubscribeForm";
 import Switcher from "components/Switcher/Switcher";
 import { LANDING_PAGE_CONTENT } from "../data/landing-page-content";
-import { SubscribeForm } from "components/SubscribeForm/SubscribeForm";
-import { useEffect } from "react";
 
 export default function Web() {
   // add smooth scroll

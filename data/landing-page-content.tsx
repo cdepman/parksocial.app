@@ -2,7 +2,7 @@ export const LANDING_PAGE_CONTENT = [
   {
     title: "Find and Create Events and Pop-ups",
     description:
-      "From pick-up frisbee, to yoga, amateur theater, a picnic, a music jam, a spontaneous silent disco, its easy to create events. Discover social opportunities with powerful filters and search.",
+      "From pick-up frisbee, to yoga, amateur theater, a picnic, a music jam, a spontaneous silent disco, its easy to find and create events. Discover social opportunities with powerful filters and search.",
     icon: (
       <svg
         version="1.1"
