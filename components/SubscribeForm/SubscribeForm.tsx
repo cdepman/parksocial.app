@@ -75,7 +75,7 @@ export const SubscribeForm = () => (
   <MailchimpSubscribe
     url={url}
     render={({ subscribe, status, message }) => (
-      <div>
+      <div className="max-w-md">
         <EmailForm
           onSubmit={(formData: EmailFormFields) => subscribe(formData)}
         />
